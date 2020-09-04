@@ -1,7 +1,7 @@
 FROM node:latest
 WORKDIR /api
 
-#COPY .env /
+COPY .env /
 
 COPY package.json /api/
 COPY server.js /api/

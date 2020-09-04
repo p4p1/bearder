@@ -2,10 +2,10 @@ FROM node:latest
 
 WORKDIR /front
 
-COPY package.json /front
+#COPY package.json /front
 
-COPY src/ /front/src
-COPY public/ /front/public
+#COPY src/ /front/src
+#COPY public/ /front/public
 
 RUN npm install
 

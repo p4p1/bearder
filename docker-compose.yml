@@ -32,6 +32,8 @@ services:
     stdin_open: true
     networks:
       - bearder-net
+    volumes:
+      - ./bearder_front:/front
     depends_on:
       - back
       - mysql
