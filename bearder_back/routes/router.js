@@ -3,7 +3,6 @@ const router = express.Router();
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 
-const boa = require("../lib/boa.js");
 const db = require("../lib/db.js");
 const middleware = require("../middleware/middleware.js");
 

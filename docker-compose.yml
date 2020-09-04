@@ -11,7 +11,7 @@ services:
       MYSQL_USER: admin
       MYSQL_PASSWORD: admin
     networks:
-      - bao-net
+      - bearder-net
     volumes:
       - ./db/schema.sql:/docker-entrypoint-initdb.d/schema.sql
       - db-data:/var/lib/mysql
@@ -26,13 +26,15 @@ services:
       - mysql
 
   front:
-    build: ./beader_front
+    build: ./bearder_front
     ports:
-      - "8080:80"
+      - "80:3000"
+    stdin_open: true
     networks:
       - bearder-net
     depends_on:
       - back
+      - mysql
 
 volumes:
   db-data:
