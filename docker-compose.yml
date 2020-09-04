@@ -37,6 +37,14 @@ services:
     depends_on:
       - back
       - mysql
+  file_server:
+    build: ./assets
+    ports:
+      - "8081:80"
+    networks:
+      - bearder-net
+    depends_on:
+      - front
 
 volumes:
   db-data:

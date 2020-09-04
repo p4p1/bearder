@@ -3,9 +3,9 @@
 }
 
 .App-logo {
-  height: 10vmin;
+  height: 3rem;
   pointer-events: none;
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 .App-header {
@@ -21,4 +21,14 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.text-muted {
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+.LogButton {
+  margin-right: 5px;
+  margin-left: 5px;
 }
