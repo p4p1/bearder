@@ -1,6 +1,8 @@
 import React from 'react';
 import '../style/App.css';
 
+import { Redirect } from 'react-router-dom'
+
 export default class HomeScreen extends React.Component {
   constructor(props) {
     super(props);
@@ -17,6 +19,13 @@ export default class HomeScreen extends React.Component {
   }
 
   render () {
+    var token = localStorage.getItem('api_token')
+
+    if (token !== null) {
+      return(
+        <Redirect push to="/Main"/>
+      );
+    }
     return (
       <div className="App">
         <header className="App-header">

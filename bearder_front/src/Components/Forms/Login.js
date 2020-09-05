@@ -1,11 +1,13 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom'
 
 export default class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       username: '',
-      password: ''
+      password: '',
+      all_good: false
     };
 
     this.handleLogin = this.handleLogin.bind(this);
@@ -24,7 +26,6 @@ export default class Login extends React.Component {
   }
 
   handleLogin() {
-    console.log('oui');
     fetch(`${global.api_link}/login`, {
       method: 'POST',
       headers: {
@@ -38,13 +39,17 @@ export default class Login extends React.Component {
     })
     .then((response) => response.json())
     .then((respJson) => {
-      console.log(respJson);
       alert(respJson.msg);
-      global.api_token = respJson.token
+      localStorage.setItem('api_token', respJson.token);
+      localStorage.setItem('username', this.state.username);
+      this.setState({ all_good: true });
     }).catch((err) => console.error(err));
   }
 
   render () {
+    if (this.state.all_good) {
+        return (<Redirect push to="/Main"/>);
+    }
     return (
       <div>
         <div>

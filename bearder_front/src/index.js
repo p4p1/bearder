@@ -4,6 +4,9 @@ import './style/index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+global.api_token = undefined;
+global.username = undefined;
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
